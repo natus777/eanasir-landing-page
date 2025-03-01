@@ -1,6 +1,8 @@
+"use client"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Icon } from "@/components/ui/icon";
 import { icons } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface BenefitsProps {
   icon: string;
@@ -52,30 +54,35 @@ export const BenefitsSection = () => {
 
         <div className="grid lg:grid-cols-2 gap-4 w-full">
           {benefitList.map(({ icon, title, description }, index) => (
-            <Card
+            <motion.div
               key={title}
-              className="bg-muted/50 dark:bg-card hover:bg-background transition-all delay-75 group/number"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ scale: 1.05, rotate: 5 }}
             >
-              <CardHeader>
-                <div className="flex justify-between">
-                  <Icon
-                    name={icon as keyof typeof icons}
-                    size={32}
-                    color="hsl(var(--primary))"
-                    className="mb-6 text-primary"
-                  />
-                  <span className="text-5xl text-muted-foreground/15 font-medium transition-all delay-75 group-hover/number:text-muted-foreground/30">
-                    0{index + 1}
-                  </span>
-                </div>
+              <Card className="bg-muted/50 dark:bg-card hover:bg-background transition-all delay-75 group/number">
+                <CardHeader>
+                  <div className="flex justify-between">
+                    <Icon
+                      name={icon as keyof typeof icons}
+                      size={32}
+                      color="hsl(var(--primary))"
+                      className="mb-6 text-primary"
+                    />
+                    <span className="text-5xl text-muted-foreground/15 font-medium transition-all delay-75 group-hover/number:text-muted-foreground/30">
+                      0{index + 1}
+                    </span>
+                  </div>
 
-                <CardTitle>{title}</CardTitle>
-              </CardHeader>
+                  <CardTitle>{title}</CardTitle>
+                </CardHeader>
 
-              <CardContent className="text-muted-foreground">
-                {description}
-              </CardContent>
-            </Card>
+                <CardContent className="text-muted-foreground">
+                  {description}
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
         </div>
       </div>
