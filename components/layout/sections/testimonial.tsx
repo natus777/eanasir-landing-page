@@ -1,4 +1,5 @@
 "use client";
+
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   Card,
@@ -31,16 +32,15 @@ const reviewList: ReviewProps[] = [
     userName: "Chariot Maker",
     comment:
       "El Nasir, may the gods smite your scales! This copper was so weak my apprentice bent it with his bare hands! Now I have to explain to my client why his chariot reinforcements are as sturdy as a reed hut. Refund or may Ishtar’s wrath be upon you!",
-    rating: 1.5,
+    rating: 2,
   },
-
   {
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Stele_of_Naram-Sin_of_Akkad.jpg/440px-Stele_of_Naram-Sin_of_Akkad.jpg",
-    name: "Naram-Sin’s Tax Collector",
-    userName: "Palace Official",
+    name: "Nanni the Furious",
+    userName: "Disgruntled Copper Buyer",
     comment:
-      "I ordered fine copper for the royal treasury, and what did I receive? Impure scrap that tarnished within a week! Do you know what happens when the king is displeased? I do! You have three days to replace my order, or you will be paying taxes in blood.",
-    rating: 2.0,
+      "I ordered premium copper, and what did I get? Broken promises and bad business! Never again. Zero stars!",
+    rating: 1.0,
   },
   {
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/King_Ur-Nammu.jpg/500px-King_Ur-Nammu.jpg",
@@ -67,6 +67,26 @@ const reviewList: ReviewProps[] = [
     rating: 1.2,
   },
 ];
+
+const renderStars = (rating: number) => {
+  const fullStars = Math.floor(rating);
+  const halfStar = rating % 1 !== 0; // If there's a fraction, we add a half star
+  const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+
+  return (
+    <div className="flex gap-1 pb-6">
+      {[...Array(fullStars)].map((_, i) => (
+        <Star key={`full-${i}`} className="size-4 fill-primary text-primary" />
+      ))}
+      {halfStar && (
+        <Star key="half" className="size-4 fill-primary text-primary opacity-50" />
+      )}
+      {[...Array(emptyStars)].map((_, i) => (
+        <Star key={`empty-${i}`} className="size-4 text-gray-400" />
+      ))}
+    </div>
+  );
+};
 
 export const TestimonialSection = () => {
   return (
@@ -95,24 +115,15 @@ export const TestimonialSection = () => {
             >
               <Card className="bg-muted/50 dark:bg-card">
                 <CardContent className="pt-6 pb-0">
-                  <div className="flex gap-1 pb-6">
-                    <Star className="size-4 fill-primary text-primary" />
-                    <Star className="size-4 fill-primary text-primary" />
-                    <Star className="size-4 fill-primary text-primary" />
-                    <Star className="size-4 fill-primary text-primary" />
-                    <Star className="size-4 fill-primary text-primary" />
-                  </div>
+                  {renderStars(review.rating)}
                   {`"${review.comment}"`}
                 </CardContent>
 
                 <CardHeader>
                   <div className="flex flex-row items-center gap-4">
                     <Avatar>
-                      <AvatarImage
-                        src="https://avatars.githubusercontent.com/u/75042455?v=4"
-                        alt="radix"
-                      />
-                      <AvatarFallback>SV</AvatarFallback>
+                      <AvatarImage src={review.image} alt={review.name} />
+                      <AvatarFallback>{review.name.charAt(0)}</AvatarFallback>
                     </Avatar>
 
                     <div className="flex flex-col">
