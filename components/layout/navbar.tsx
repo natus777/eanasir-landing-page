@@ -34,6 +34,10 @@ const routeList: RouteProps[] = [
     label: "How to buy",
   },
   {
+    href: '#testimonials',
+    label: "Testimonials",
+  },
+  {
     href: "#faq",
     label: "FAQ",
   },
