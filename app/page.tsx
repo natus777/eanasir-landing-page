@@ -12,29 +12,29 @@ import { TeamSection } from "@/components/layout/sections/team";
 import { TestimonialSection } from "@/components/layout/sections/testimonial";
 
 export const metadata = {
-  title: "Shadcn - Landing template",
-  description: "Free Shadcn landing page for developers",
+  title: "Ea Nasir - $COPPER",
+  description: "The latest coin that brings you $COPPER",
   openGraph: {
     type: "website",
-    url: "https://github.com/nobruf/shadcn-landing-page.git",
-    title: "Shadcn - Landing template",
-    description: "Free Shadcn landing page for developers",
+    url: "https://eanasir.io",
+    title: "Ea Nasir - $COPPER",
+    description: "The latest coin that brings you $COPPER",
     images: [
       {
-        url: "https://res.cloudinary.com/dbzv9xfjp/image/upload/v1723499276/og-images/shadcn-vue.jpg",
+        url: "https://i.ibb.co/qY7077sj/image.png",
         width: 1200,
         height: 630,
-        alt: "Shadcn - Landing template",
+        alt: "Ea Nasir - $COPPER",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    site: "https://github.com/nobruf/shadcn-landing-page.git",
-    title: "Shadcn - Landing template",
-    description: "Free Shadcn landing page for developers",
+    site: "https://eanasir.io",
+    title: "Ea Nasir - $COPPER",
+    description: "The latest coin that brings you $COPPER",
     images: [
-      "https://res.cloudinary.com/dbzv9xfjp/image/upload/v1723499276/og-images/shadcn-vue.jpg",
+      "https://i.ibb.co/qY7077sj/image.png",
     ],
   },
 };
