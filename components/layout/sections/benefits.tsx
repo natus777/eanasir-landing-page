@@ -31,7 +31,7 @@ const benefitList: BenefitsProps[] = [
     icon: "Sparkle",
     title: "Buy $COPPER",
     description:
-      "Paste the token address (CA) into Raydium and switch SOL for $PNUT. There's zero taxes so you don’t need to worry.",
+      "Paste the token address (CA) into Raydium and switch SOL for $COPPER. There's zero taxes so you don’t need to worry.",
   },
 ];
 
