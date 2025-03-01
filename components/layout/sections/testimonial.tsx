@@ -31,7 +31,7 @@ const reviewList: ReviewProps[] = [
     name: "Lugal the Furious",
     userName: "Chariot Maker",
     comment:
-      "El Nasir, may the gods smite your scales! This copper was so weak my apprentice bent it with his bare hands! Now I have to explain to my client why his chariot reinforcements are as sturdy as a reed hut. Refund or may Ishtar’s wrath be upon you!",
+      "Ea Nasir, may the gods smite your scales! This copper was so weak my apprentice bent it with his bare hands! Now I have to explain to my client why his chariot reinforcements are as sturdy as a reed hut. Refund or may Ishtar’s wrath be upon you!",
     rating: 2,
   },
   {
@@ -55,7 +55,7 @@ const reviewList: ReviewProps[] = [
     name: "Ilu-Bani the Merchant",
     userName: "Honest Trader (Mostly)",
     comment:
-      "El Nasir, you swindler! I paid a full sack of barley for this shipment, yet half the ingots are missing! Did you think I wouldn’t notice? My camels carry heavier loads of shame than this. Fix this, or I will make sure the entire market hears of your dishonor!",
+      "Ea Nasir, you swindler! I paid a full sack of barley for this shipment, yet half the ingots are missing! Did you think I wouldn’t notice? My camels carry heavier loads of shame than this. Fix this, or I will make sure the entire market hears of your dishonor!",
     rating: 1.8,
   },
   {
