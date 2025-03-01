@@ -21,10 +21,11 @@ export const HeroSection = () => {
 
           <div className="max-w-screen-md mx-auto text-center text-4xl md:text-6xl font-bold">
             <h1>
-              Ea-Nasir sells you
-              <span className="text-transparent px-2 bg-gradient-to-r from-[#D247BF] to-primary bg-clip-text">
-                $COPPER
-              </span>
+              Ea Nasir sells you
+              <span className="text-transparent px-2 bg-gradient-to-r from-[#B87333] via-[#D4A373] to-[#8D5524] bg-clip-text">
+  $COPPER
+</span>
+
             </h1>
           </div>
 
