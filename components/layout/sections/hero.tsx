@@ -74,20 +74,28 @@ export const HeroSection = () => {
           </Badge>
 
           <motion.h1
-            className="max-w-screen-md mx-auto text-center text-4xl md:text-6xl font-bold"
-            initial="hidden"
-            animate="visible"
-            variants={{
-              hidden: { opacity: 0, x: -100 },
-              visible: { opacity: 1, x: 0 },
-            }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            Ea Nasir sells you
-            <span className="text-transparent px-2 bg-gradient-to-r from-[#B87333] via-[#D4A373] to-[#8D5524] bg-clip-text">
-              $COPPER
-            </span>
-          </motion.h1>
+  className="max-w-screen-md mx-auto text-center text-4xl md:text-6xl font-bold"
+  initial="hidden"
+  animate="visible"
+  variants={{
+    hidden: { opacity: 0, x: -100 },
+    visible: { opacity: 1, x: 0 },
+  }}
+  transition={{ duration: 0.5, delay: 0.2 }}
+>
+  Ea Nasir sells you
+  <br />
+  <span className="inline-flex items-center justify-center gap-2 mt-2">
+    <img
+      src="/logos/eanasir.png" // Update with the correct path
+      alt="Copper Logo"
+      className="h-12 md:h-16 w-auto"
+    />
+    <span className="text-transparent bg-gradient-to-r from-[#B87333] via-[#D4A373] to-[#8D5524] bg-clip-text">
+      $COPPER
+    </span>
+  </span>
+</motion.h1>
 
           <motion.p
             className="max-w-screen-sm mx-auto text-xl text-muted-foreground"
