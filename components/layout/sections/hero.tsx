@@ -66,12 +66,43 @@ export const HeroSection = () => {
           }}
           transition={{ duration: 0.5 }}
         >
-          <Badge variant="outline" className="text-sm py-2">
-            <span className="mr-2 text-primary">
-              <Badge>New</Badge>
-            </span>
-            <span> The latest coin is out now! </span>
-          </Badge>
+        <motion.div
+        className="relative w-full flex flex-col items-center justify-center py-10 overflow-hidden"
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: { opacity: 0, y: 20 },
+          visible: { opacity: 1, y: 0 },
+        }}
+        transition={{ duration: 0.5, delay: 0.8 }}
+      >
+        {/* Floating Sumerian Statue ABOVE the badge */}
+      <div className="relative w-full h-[165px] mb-[-50px]">
+        <Image
+          src="/eanasir.png" // Update with correct path
+          width={200}
+          height={400}
+          alt="Sumerian Statue"
+          className="absolute left-1/2 transform -translate-x-1/2 z-20
+                     drop-shadow-2xl pointer-events-none
+                     scale-[1.5] top-[-50px]
+                     md:scale-[1.2] md:top-[-30px] 
+                     sm:scale-[1] sm:top-[-15px]
+                     max-sm:scale-[1] max-sm:top-[-15px]"
+        />
+      </div>
+
+      {/* Text Content */}
+      <div className="relative z-10 text-center space-y-8 mt-[50px]">
+        <Badge variant="outline" className="text-sm py-2">
+          <span className="mr-2 text-primary">
+            <Badge>New</Badge>
+          </span>
+          <span> The latest coin is out now! </span>
+        </Badge>
+      </div>
+      </motion.div>
+      
 
           <motion.h1
   className="max-w-screen-md mx-auto text-center text-4xl md:text-6xl font-bold"
@@ -137,15 +168,6 @@ export const HeroSection = () => {
   }}
   transition={{ duration: 0.5, delay: 0.8 }}
 >
-  {/* Floating Sumerian Statue from the Top of Hero */}
-  <Image
-    src="/eanasir.png" // Update with correct path
-    width={300}
-    height={400}
-    alt="Sumerian Statue"
-    className="absolute top-[-12rem] left-[17%] transform -translate-x-1/2 z-[5]
-             scale-[1.5] drop-shadow-2xl"
-  />
 
   {/* Hero Image Wrapper */}
   <div className="relative z-[10]">
