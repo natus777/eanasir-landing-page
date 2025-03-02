@@ -10,46 +10,47 @@ import { useEffect, useRef, useState } from "react";
 export const HeroSection = () => {
   const { theme } = useTheme();
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const [isMuted, setIsMuted] = useState(true); // Start muted
+  const [isMuted, setIsMuted] = useState(true);
 
   useEffect(() => {
-    // Set the audio element to muted initially
     if (audioRef.current) {
-      audioRef.current.muted = true; // Ensure it's muted
+      audioRef.current.muted = true;
     }
   }, []);
 
   const toggleMute = () => {
-    if (audioRef.current) {
-      if (isMuted) {
-        audioRef.current.muted = false; // Unmute the audio
-        audioRef.current.volume = 1; // Set volume to 1
-        audioRef.current.play().catch(() => {
-          console.log("Playback failed, user interaction may be required.");
-        });
-      } else {
-        audioRef.current.muted = true; // Mute the audio
-      }
-      setIsMuted(!isMuted); // Toggle mute state
+    const audio = audioRef.current;
+    if (!audio) return; // Null check
+
+    if (isMuted) {
+      audio.muted = false;
+      audio.volume = 1;
+      audio.play().catch(() => {
+        console.log("Playback failed, user interaction may be required.");
+      });
+    } else {
+      audio.muted = true;
     }
+    setIsMuted(!isMuted);
   };
 
   const handleAudioLoop = () => {
-    if (audioRef.current) {
-      let fadeDuration = 3; // 3 seconds fade-out
-      let volume = 1.0;
-      const fadeInterval = setInterval(() => {
-        if (volume > 0.05) {
-          volume -= 0.05;
-          audioRef.current.volume = volume;
-        } else {
-          clearInterval(fadeInterval);
-          audioRef.current.currentTime = 0;
-          audioRef.current.volume = 1;
-          audioRef.current.play();
-        }
-      }, fadeDuration * 50);
-    }
+    const audio = audioRef.current;
+    if (!audio) return; // Null check
+
+    let fadeDuration = 3; // 3 seconds fade-out
+    let volume = 1.0;
+    const fadeInterval = setInterval(() => {
+      if (volume > 0.05) {
+        volume -= 0.05;
+        audio.volume = volume;
+      } else {
+        clearInterval(fadeInterval);
+        audio.currentTime = 0;
+        audio.volume = 1;
+        audio.play();
+      }
+    }, fadeDuration * 50);
   };
 
   return (
