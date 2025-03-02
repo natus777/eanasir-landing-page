@@ -1,24 +1,55 @@
 "use client";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Volume2, VolumeX } from "lucide-react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 export const HeroSection = () => {
   const { theme } = useTheme();
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [isMuted, setIsMuted] = useState(true); // Start muted
 
-  // Animation variants
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
+  useEffect(() => {
+    // Set the audio element to muted initially
+    if (audioRef.current) {
+      audioRef.current.muted = true; // Ensure it's muted
+    }
+  }, []);
+
+  const toggleMute = () => {
+    if (audioRef.current) {
+      if (isMuted) {
+        audioRef.current.muted = false; // Unmute the audio
+        audioRef.current.volume = 1; // Set volume to 1
+        audioRef.current.play().catch(() => {
+          console.log("Playback failed, user interaction may be required.");
+        });
+      } else {
+        audioRef.current.muted = true; // Mute the audio
+      }
+      setIsMuted(!isMuted); // Toggle mute state
+    }
   };
 
-  const slideIn = {
-    hidden: { opacity: 0, x: -100 },
-    visible: { opacity: 1, x: 0 },
+  const handleAudioLoop = () => {
+    if (audioRef.current) {
+      let fadeDuration = 3; // 3 seconds fade-out
+      let volume = 1.0;
+      const fadeInterval = setInterval(() => {
+        if (volume > 0.05) {
+          volume -= 0.05;
+          audioRef.current.volume = volume;
+        } else {
+          clearInterval(fadeInterval);
+          audioRef.current.currentTime = 0;
+          audioRef.current.volume = 1;
+          audioRef.current.play();
+        }
+      }, fadeDuration * 50);
+    }
   };
 
   return (
@@ -28,7 +59,10 @@ export const HeroSection = () => {
           className="text-center space-y-8"
           initial="hidden"
           animate="visible"
-          variants={fadeInUp}
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0 },
+          }}
           transition={{ duration: 0.5 }}
         >
           <Badge variant="outline" className="text-sm py-2">
@@ -38,26 +72,30 @@ export const HeroSection = () => {
             <span> The latest coin is out now! </span>
           </Badge>
 
-          <motion.div
+          <motion.h1
             className="max-w-screen-md mx-auto text-center text-4xl md:text-6xl font-bold"
             initial="hidden"
             animate="visible"
-            variants={slideIn}
+            variants={{
+              hidden: { opacity: 0, x: -100 },
+              visible: { opacity: 1, x: 0 },
+            }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <h1>
-              Ea Nasir sells you
-              <span className="text-transparent px-2 bg-gradient-to-r from-[#B87333] via-[#D4A373] to-[#8D5524] bg-clip-text">
-                $COPPER
-              </span>
-            </h1>
-          </motion.div>
+            Ea Nasir sells you
+            <span className="text-transparent px-2 bg-gradient-to-r from-[#B87333] via-[#D4A373] to-[#8D5524] bg-clip-text">
+              $COPPER
+            </span>
+          </motion.h1>
 
           <motion.p
             className="max-w-screen-sm mx-auto text-xl text-muted-foreground"
             initial="hidden"
             animate="visible"
-            variants={fadeInUp}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 },
+            }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             {`He's the best copper merchant in the world! And you better trust what he has to tell ya!`}
@@ -67,7 +105,10 @@ export const HeroSection = () => {
             className="space-y-4 md:space-y-0 md:space-x-4"
             initial="hidden"
             animate="visible"
-            variants={fadeInUp}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0 },
+            }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
             <Button className="w-5/6 md:w-1/4 font-bold group/arrow">
@@ -81,7 +122,10 @@ export const HeroSection = () => {
           className="relative group mt-14"
           initial="hidden"
           animate="visible"
-          variants={fadeInUp}
+          variants={{
+            hidden: { opacity: 0, y: 20 },
+            visible: { opacity: 1, y: 0 },
+          }}
           transition={{ duration: 0.5, delay: 0.8 }}
         >
           <div className="absolute top-2 lg:-top-8 left-1/2 transform -translate-x-1/2 w-[90%] mx-auto h-24 lg:h-80 bg-primary/50 rounded-full blur-3xl"></div>
@@ -95,6 +139,27 @@ export const HeroSection = () => {
 
           <div className="absolute bottom-0 left-0 w-full h-20 md:h-28 bg-gradient-to-b from-background/0 via-background/50 to-background rounded-lg"></div>
         </motion.div>
+
+        {/* Mute/Unmute Button */}
+        <Button
+          onClick={toggleMute}
+          className="fixed bottom-5 right-5 
+             bg-gradient-to-r from-[#B87333] via-[#D4A373] to-[#8D5524] 
+             text-white p-3 rounded-full shadow-lg 
+             border-2 border-[#D4A373] 
+             hover:shadow-[0px_0px_12px_#D4A373] 
+             transition-all duration-300"
+        >
+          {isMuted ? <VolumeX className="size-6" /> : <Volume2 className="size-6" />}
+        </Button>
+
+        {/* Hidden Audio Element */}
+        <audio
+          ref={audioRef}
+          src="audio/theepicofgilgamesh.mp3"
+          preload="auto"
+          onEnded={handleAudioLoop}
+        ></audio>
       </div>
     </section>
   );
