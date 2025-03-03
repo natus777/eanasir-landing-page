@@ -6,39 +6,8 @@ html {
   scroll-behavior: smooth;
 }
 
-/* *=========== Copper-Clay Tablet Theme =========== */
+/* *=========== Copper-Clay Tablet Dark Theme =========== */
 @layer base {
-  :root {
-    --background: 30 30% 85%; /* Aged clay parchment */
-    --foreground: 18 70% 15%; /* Deep earthen brown */
-
-    --card: 30 30% 85%;
-    --card-foreground: 18 70% 15%;
-
-    --popover: 30 30% 85%;
-    --popover-foreground: 18 70% 15%;
-
-    --primary: 25 60% 40%; /* Weathered dark copper */
-    --primary-foreground: 45 20% 85%; /* Pale patina highlight */
-
-    --secondary: 28 50% 55%; /* Burnished bronze */
-    --secondary-foreground: 18 70% 15%;
-
-    --muted: 28 30% 45%;
-    --muted-foreground: 28 40% 30%;
-
-    --accent: 28 50% 38%; /* Oxidized copper-bronze */
-    --accent-foreground: 30 80% 15%;
-
-    --destructive: 0 60% 30%; /* Darkened rust */
-    --destructive-foreground: 45 20% 85%;
-
-    --border: 28 40% 50%;
-    --input: 28 40% 50%;
-    --ring: 25 60% 40%;
-    --radius: 0.5rem;
-  }
-
   .dark {
     --background: 20 40% 10%; /* Dark clay tablet */
     --foreground: 35 20% 80%; /* Soft aged limestone */
@@ -71,17 +40,12 @@ html {
 }
 
 /* Copper-Clay Shadows */
-.shadow-light {
-  box-shadow: inset 0 0 6px rgba(92, 64, 51, 0.4); /* Rough clay shadow */
-}
-
 .shadow-dark {
   box-shadow: inset 0 0 10px rgba(70, 50, 40, 0.5); /* Deep chiseled look */
 }
 
 /* Clay Tablet Texture */
-html,
-body {
+html, body {
   height: 100%;
   overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
 }
@@ -89,36 +53,13 @@ body {
 body {
   position: relative;
   background: url("/textures/claytablet.png");
-  background-size: cover; /* Changed from 100% 100% to cover for better scaling */
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-attachment: fixed; /* This ensures the background stays fixed when scrolling */
+  background-attachment: fixed;
   background-blend-mode: multiply;
   filter: contrast(1.1) brightness(0.9);
-  min-height: 100vh; /* Ensures it covers the entire viewport */
-}
-
-/* Fixed overlay for light mode */
-body::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(250, 221, 180, 0.9); /* Light brown tint */
-  pointer-events: none;
-  z-index: -1;
-}
-
-html, body {
-  min-height: 100%;
-  height: auto;
-  position: relative;
-}
-
-.dark body::after {
-  display: none; /* Remove overlay in dark mode */
+  min-height: 100vh;
 }
 
 /* Fine-Tuned Embossed Look */
@@ -130,10 +71,8 @@ html, body {
 
 /* Ensure all elements inherit border colors */
 @layer base {
-  html,
-  body {
+  html, body {
     min-height: 100%;
     height: auto;
   }
 }
-
