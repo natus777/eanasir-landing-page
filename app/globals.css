@@ -80,14 +80,19 @@ html {
 }
 
 /* Clay Tablet Texture */
+html, body {
+  height: 100%;
+  overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
+}
 body {
   background: url('/textures/claytablet.png');
-  background-size: cover; /* Default for larger screens */
-  background-repeat: no-repeat; /* Prevent repeating */
+  background-size: 100% 100%; /* Ensures it fully covers the screen */
+  background-repeat: no-repeat;
   background-position: center;
-  background-attachment: fixed; /* Fixes abrupt cutoff */
+  background-attachment: fixed;
   background-blend-mode: multiply;
   filter: contrast(1.1) brightness(0.9);
+  min-height: 100vh; /* Ensures it covers the entire viewport */
 }
 
 /* Fine-Tuned Embossed Look */
