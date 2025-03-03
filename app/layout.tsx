@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br" suppressHydrationWarning>
-      <body className={cn("min-h-screen bg-background", papyrusFont.className)}>
+      <body className={cn("min-h-screen bg-background overflow-y-scroll", papyrusFont.className)}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
