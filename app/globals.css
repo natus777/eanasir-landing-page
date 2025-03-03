@@ -51,7 +51,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: fixed; /* Fixed for desktop */
   background-blend-mode: multiply;
   filter: contrast(1.1) brightness(0.9);
   min-height: 100vh;
@@ -80,6 +80,13 @@ html, body {
   text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
   letter-spacing: 0.05em;
   font-weight: bold;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) { /* Adjust the max-width as needed */
+  body {
+    background-attachment: scroll; /* Change to scroll for mobile */
+  }
 }
 
 /* Ensure all elements inherit border colors */

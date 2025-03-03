@@ -30,7 +30,7 @@ export const CommunitySection = () => {
                   >
                     <DiscordIcon />
                   </motion.div>
-                  <div>
+                  <div className="text-2xl">
                     Ready to join this
                     <span className="text-transparent px-2 bg-gradient-to-r from-[#B87333] via-[#D4A373] to-[#8D5524] bg-clip-text">
                       Community?
