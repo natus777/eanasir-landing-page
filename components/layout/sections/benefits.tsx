@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Icon } from "@/components/ui/icon";
 import { icons } from "lucide-react";
 import { motion } from "framer-motion";
+import { headingFont } from "@/lib/fonts";
 
 interface BenefitsProps {
   icon: string;
@@ -48,8 +49,8 @@ export const BenefitsSection = () => {
       <div className="flex flex-col lg:text-left gap-y-12">
         {/* Heading Section */}
         <div>
-          <h2 className="text-lg text-primary mb-2 tracking-wider">Get $COPPER</h2>
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">How to buy?</h2>
+          <h2 className={`${headingFont.className} text-lg text-primary mb-2 tracking-wider`}>Get $COPPER</h2>
+          <h2 className={`${headingFont.className} text-2xl md:text-3xl font-bold mb-4`}>How to buy?</h2>
           <p className="text-base text-muted-foreground mb-8">
             Follow my steps on how you can get the best Copper in the World!
           </p>

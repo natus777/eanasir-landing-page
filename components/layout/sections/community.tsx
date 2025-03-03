@@ -9,6 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { motion } from "framer-motion";
+import { headingFont } from "@/lib/fonts";
 
 export const CommunitySection = () => {
   return (
@@ -22,7 +23,7 @@ export const CommunitySection = () => {
           >
             <Card className="bg-background border-none shadow-lg text-center flex flex-col items-center justify-center transition-transform duration-300 hover:shadow-xl hover:scale-105">
               <CardHeader>
-                <CardTitle className="text-4xl md:text-5xl font-bold flex flex-col items-center">
+                <CardTitle className={`${headingFont.className} text-4xl md:text-5xl font-bold flex flex-col items-center`}>
                   <motion.div
                     whileHover={{ scale: 1.1, rotate: 10 }}
                     transition={{ type: "spring", stiffness: 300 }}
@@ -43,7 +44,7 @@ export const CommunitySection = () => {
               </CardContent>
 
               <CardFooter>
-                <Button asChild>
+                <Button asChild className="rounded-full">
                   <a href="https://discord.com/" target="_blank" rel="noopener noreferrer">
                     Join Discord
                   </a>

@@ -4,10 +4,9 @@ import { cn } from "@/lib/utils";
 import { Navbar } from "@/components/layout/navbar";
 import { ThemeProvider } from "@/components/layout/theme-provider";
 
+import { IM_Fell_DW_Pica } from "next/font/google";
 
-import { Uncial_Antiqua } from "next/font/google";
-const papyrusFont = Uncial_Antiqua({ subsets: ["latin"], weight: "400" });
-
+const paragraphFont = IM_Fell_DW_Pica({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
   title: "Ea Nasir - $COPPER",
@@ -21,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br" suppressHydrationWarning>
-      <body className={cn("min-h-screen bg-background overflow-y-scroll", papyrusFont.className)}>
+      <body className={cn("min-h-screen bg-background overflow-y-scroll text-xl", paragraphFont.className)}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -29,7 +28,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          {children}
+          <main className="font-normal">{children}</main>
         </ThemeProvider>
       </body>
     </html>

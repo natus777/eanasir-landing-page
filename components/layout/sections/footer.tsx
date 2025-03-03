@@ -1,6 +1,7 @@
 import { Separator } from "@/components/ui/separator";
 import { ChevronsDownIcon, HandCoins } from "lucide-react";
 import Link from "next/link";
+import { headingFont } from "@/lib/fonts";
 
 export const FooterSection = () => {
   return (
@@ -14,7 +15,7 @@ export const FooterSection = () => {
                 alt="Logo" 
                 className="w-10 h-10 mr-2"
               />
-              <h3 className="text-2xl">Ea Nasir</h3>
+              <h3 className={`${headingFont.className} text-2xl`}>Ea Nasir</h3>
             </Link>
           </div>
 

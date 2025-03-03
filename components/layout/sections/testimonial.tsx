@@ -16,6 +16,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Star } from "lucide-react";
+import { headingFont } from "@/lib/fonts";
 
 interface ReviewProps {
   image: string;
@@ -92,11 +93,11 @@ export const TestimonialSection = () => {
   return (
     <section id="testimonials" className="container py-24 sm:py-32">
       <div className="text-center mb-8">
-        <h2 className="text-lg text-primary text-center mb-2 tracking-wider">
+        <h2 className={`${headingFont.className} text-lg text-primary text-center mb-2 tracking-wider`}>
           Testimonials
         </h2>
 
-        <h2 className="text-3xl md:text-4xl text-center font-bold mb-4">
+        <h2 className={`${headingFont.className} text-3xl md:text-4xl text-center font-bold mb-4`}>
           Hear What Our Buyers Say
         </h2>
       </div>
