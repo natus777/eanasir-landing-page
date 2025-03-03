@@ -65,7 +65,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.15); /* Dark tint overlay */
+  background: rgba(0, 0, 0, 0.05); /* Dark tint overlay */
   pointer-events: none; /* Prevent interaction issues */
   z-index: -1; /* Keep it behind all content */
 }

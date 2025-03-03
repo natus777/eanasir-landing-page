@@ -98,20 +98,21 @@ export const HeroSection = () => {
           </motion.p>
 
           <motion.div
-            className="space-y-4 md:space-y-0 md:space-x-4"
-            initial="hidden"
-            animate="visible"
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0 },
-            }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-          >
-            <Button className="w-5/6 md:w-1/4 font-bold group/arrow">
-              Buy $COPPER
-              <ArrowRight className="size-5 ml-2 group-hover/arrow:translate-x-1 transition-transform" />
-            </Button>
-          </motion.div>
+  className="flex justify-center"
+  initial="hidden"
+  animate="visible"
+  variants={{
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  }}
+  transition={{ duration: 0.5, delay: 0.6 }}
+>
+  <Button className="px-6 py-3 font-bold rounded-full text-lg flex items-center justify-center whitespace-nowrap group/arrow">
+    Buy $COPPER
+    <ArrowRight className="size-5 ml-2 group-hover/arrow:translate-x-1 transition-transform" />
+  </Button>
+</motion.div>
+
         </motion.div>
 
         <motion.div
