@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
-import { IM_Fell_DW_Pica } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Navbar } from "@/components/layout/navbar";
 import { ThemeProvider } from "@/components/layout/theme-provider";
 
-const sumerianFont = IM_Fell_DW_Pica({ subsets: ["latin"], weight: "400" });
+
+import { Uncial_Antiqua } from "next/font/google";
+const papyrusFont = Uncial_Antiqua({ subsets: ["latin"], weight: "400" });
+
 
 export const metadata: Metadata = {
   title: "Ea Nasir - $COPPER",
@@ -19,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br" suppressHydrationWarning>
-      <body className={cn("min-h-screen bg-background", sumerianFont.className)}>
+      <body className={cn("min-h-screen bg-background", papyrusFont.className)}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
