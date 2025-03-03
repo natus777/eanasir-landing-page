@@ -111,12 +111,16 @@ body {
   /* Light brown overlay for better readability */
   body::before {
     content: "";
-    position: absolute;
-    inset: 0;
+    position: fixed; /* Keeps it in place during scrolling */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     background: rgba(250, 221, 180, 0.9); /* Light brown tint, adjustable */
     pointer-events: none; /* Ensure it doesn’t block interactions */
     z-index: -1; /* Keeps it behind content */
   }
+
 
   /* Remove overlay in dark mode */
   .dark body::before {
