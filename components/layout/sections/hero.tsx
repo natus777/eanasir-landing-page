@@ -32,34 +32,35 @@ export const HeroSection = () => {
           transition={{ duration: 0.5 }}
         >
           <motion.div
-            className="relative w-full flex flex-col items-center justify-center py-10 overflow-hidden"
-            initial="hidden"
-            animate="visible"
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0 },
-            }}
-            transition={{ duration: 0.5, delay: 0.8 }}
-          >
-            <div className="relative w-full h-[165px] mb-[-50px]">
-              <Image
-                src="/eanasir.png"
-                width={200}
-                height={400}
-                alt="Sumerian Statue"
-                className="absolute left-1/2 transform -translate-x-1/2 z-20 drop-shadow-2xl pointer-events-none scale-[1.5] top-[-50px] md:scale-[1.2] md:top-[-30px] sm:scale-[1] sm:top-[-15px] max-sm:scale-[1] max-sm:top-[-15px]"
-              />
-            </div>
+  className="relative w-full flex flex-col items-center justify-center py-10 overflow-hidden"
+  initial="hidden"
+  animate="visible"
+  variants={{
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  }}
+  transition={{ duration: 0.5, delay: 0.8 }}
+>
+  <div className="relative w-full h-[165px] mb-[-50px] before:absolute before:left-1/2 before:top-1/2 before:w-[200px] before:h-[125px] before:bg-[#B87333] before:opacity-70 before:blur-2xl before:rounded-full before:-translate-x-1/2 before:-translate-y-1/2">
+    <Image
+      src="/eanasir.png"
+      width={200}
+      height={400}
+      alt="Sumerian Statue"
+      className="absolute left-1/2 transform -translate-x-1/2 z-20 drop-shadow-2xl pointer-events-none scale-[1.5] top-[-50px] md:scale-[1.2] md:top-[-30px] sm:scale-[1] sm:top-[-15px] max-sm:scale-[1] max-sm:top-[-15px]"
+    />
+  </div>
 
-            <div className="relative z-10 text-center space-y-8 mt-[50px]">
-              <Badge variant="outline" className="text-sm py-2">
-                <span className="mr-2 text-primary">
-                  <Badge>New</Badge>
-                </span>
-                <span> The latest coin is out now! </span>
-              </Badge>
-            </div>
-          </motion.div>
+  <div className="relative z-10 text-center space-y-8 mt-[50px]">
+    <Badge variant="outline" className="text-sm py-2 bg-[#8D5524] text-white border-none">
+      <span className="mr-2 text-white">
+        <Badge className="bg-[#B87333] text-white border-none">New</Badge>
+      </span>
+      <span> The latest coin is out now! </span>
+    </Badge>
+  </div>
+</motion.div>
+
 
           <motion.h1
   className={`${headingFont.className} max-w-screen-md mx-auto text-center text-4xl md:text-6xl font-bold`}
