@@ -24,7 +24,7 @@ export default function RootLayout({
       <body className={cn("min-h-screen bg-background overflow-y-scroll", papyrusFont.className)}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
