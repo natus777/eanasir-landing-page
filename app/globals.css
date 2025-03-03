@@ -45,11 +45,6 @@ html {
 }
 
 /* Clay Tablet Texture */
-html, body {
-  height: 100%;
-  overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
-}
-
 body {
   position: relative;
   background: url("/textures/claytablet.png");
@@ -60,6 +55,24 @@ body {
   background-blend-mode: multiply;
   filter: contrast(1.1) brightness(0.9);
   min-height: 100vh;
+}
+
+/* Overlay to add a semi-transparent effect */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.15); /* Dark tint overlay */
+  pointer-events: none; /* Prevent interaction issues */
+  z-index: -1; /* Keep it behind all content */
+}
+
+/* Prevent bouncing effect when scrolling */
+html, body {
+  overscroll-behavior: none; /* Disables scroll bouncing */
 }
 
 /* Fine-Tuned Embossed Look */
