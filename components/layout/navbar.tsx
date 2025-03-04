@@ -55,7 +55,10 @@ export const Navbar = () => {
   }
 
   return (
-    <header className="shadow-inner bg-opacity-15 w-[90%] md:w-[70%] lg:w-[75%] lg:max-w-screen-xl top-5 mx-auto sticky border border-secondary z-40 rounded-2xl flex justify-between items-center p-2 bg-card">
+    <header className="shadow-inner bg-opacity-15 w-[90%] md:w-[70%] lg:w-[75%] 
+                  lg:max-w-screen-xl mx-auto mt-5 lg:mt-0 border border-secondary 
+                  z-40 rounded-2xl flex justify-between items-center 
+                  p-2 bg-card lg:sticky lg:top-5">
       <Link href="/" className={`${headingFont.className} font-bold text-lg flex items-center`}>
         <img src="/logos/eanasir.png" alt="Logo" className="w-9 h-9 mr-2" />
         Ea Nasir
@@ -67,7 +70,6 @@ export const Navbar = () => {
           <SheetTrigger asChild>
             <Menu onClick={() => setIsOpen(!isOpen)} className="cursor-pointer lg:hidden" />
           </SheetTrigger>
-
           <SheetContent side="left" className="flex flex-col rounded-tr-2xl rounded-br-2xl bg-card border-secondary">
             <SheetHeader className="mb-4 ml-4">
               <SheetTitle className="flex items-center">
@@ -79,7 +81,6 @@ export const Navbar = () => {
             </SheetHeader>
 
             <div className="flex flex-col gap-4 flex-1">
-              {/* New Mute Button */}
               <Button
                 onClick={toggleMute}
                 className="bg-gradient-to-r from-[#B87333] via-[#D4A373] to-[#8D5524] 
@@ -149,4 +150,3 @@ export const Navbar = () => {
     </header>
   )
 }
-
