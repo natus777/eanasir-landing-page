@@ -73,7 +73,7 @@ export const Navbar = () => {
           <SheetContent side="left" className="flex flex-col rounded-tr-2xl rounded-br-2xl bg-card border-secondary">
             <SheetHeader className="mb-4 ml-4">
               <SheetTitle className="flex items-center">
-                <Link href="/" className="font-bold text-lg flex items-center">
+                <Link href="/" className={`${headingFont.className} font-bold text-xl flex items-center`}>
                   <img src="/logos/eanasir.png" alt="Logo" className="w-9 h-9 mr-2" />
                   Ea Nasir
                 </Link>
@@ -86,7 +86,7 @@ export const Navbar = () => {
                 className="bg-gradient-to-r from-[#B87333] via-[#D4A373] to-[#8D5524] 
                            text-white py-2 rounded shadow-lg 
                            hover:shadow-[0px_0px_12px_#D4A373] 
-                           transition-all duration-300 w-full"
+                           transition-all duration-300 w-full text-[17px]"
               >
                 {isMuted ? (
                   <>
@@ -107,7 +107,7 @@ export const Navbar = () => {
                   onClick={() => setIsOpen(false)}
                   asChild
                   variant="ghost"
-                  className="justify-start text-base"
+                  className="justify-start text-lg"
                 >
                   <Link href={href}>{label}</Link>
                 </Button>
@@ -123,7 +123,7 @@ export const Navbar = () => {
           <NavigationMenuItem>
             {routeList.map(({ href, label }) => (
               <NavigationMenuLink key={href} asChild>
-                <Link href={href} className="text-base px-2">
+                <Link href={href} className="text-lg px-2">
                   {label}
                 </Link>
               </NavigationMenuLink>
