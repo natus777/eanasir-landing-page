@@ -46,12 +46,12 @@ const benefitList: BenefitsProps[] = [
 export const BenefitsSection = () => {
   return (
     <section id="how-to-buy" className="container py-24 sm:py-32">
-      <div className="flex flex-col lg:text-left gap-y-12">
+      <div className="flex flex-col lg:text-left gap-y-12"> 
         {/* Heading Section */}
         <div>
           <h2 className={`${headingFont.className} text-lg text-primary mb-2 tracking-wider`}>Get $COPPER</h2>
           <h2 className={`${headingFont.className} text-2xl md:text-3xl font-bold mb-4`}>How to buy?</h2>
-          <p className="text-base text-muted-foreground mb-8">
+          <p className="text-lg text-muted-foreground mb-8">
             Follow my steps on how you can get the best Copper in the World!
           </p>
         </div>
@@ -90,10 +90,10 @@ export const BenefitsSection = () => {
                     </span>
                   </div>
 
-                  <CardTitle className="text-left text-lg">{title}</CardTitle>
+                  <CardTitle className={`${headingFont.className} text-left text-lg`}>{title}</CardTitle>
                 </CardHeader>
 
-                <CardContent className="text-muted-foreground text-left text-sm flex-grow">
+                <CardContent className="text-muted-foreground text-left text-lg flex-grow">
                   {description}
                 </CardContent>
               </Card>
