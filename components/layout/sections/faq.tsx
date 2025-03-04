@@ -14,27 +14,33 @@ interface FAQProps {
 
 const FAQList: FAQProps[] = [
   {
-    question: "Duis aute irure dolor in reprehenderit in voluptate velit?",
+    question: "What is $COPPER?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint labore quidem quam consectetur sapiente, iste rerum reiciendis animi nihil nostrum sit quo, modi quod.",
-    value: "item-2",
+      "$COPPER is my legendary (and questionably high-quality) copper, now immortalized on the Solana blockchain. A memecoin worthy of the greatest merchant in history—me.",
+    value: "item-1",
   },
   {
     question:
-      "Lorem ipsum dolor sit amet Consectetur natus dolor minus quibusdam?",
+      "Where can I buy $COPPER?",
     answer:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore qui nostrum reiciendis veritatis.",
+      "On Raydium. Just like my copper business, there are no refunds, no complaints, and definitely no guarantees.",
+    value: "item-2",
+  },
+  {
+    question: "Is $COPPER a good investment?",
+    answer: "Ah, you ask if my copper is good? Of course! But whether it holds value… well, that depends on how much you trust me.",
     value: "item-3",
   },
   {
-    question: "Excepteur sint occaecat cupidata non proident sunt?",
-    answer: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+    question:
+      "How do I store $COPPER?",
+    answer: "You will need a Solana wallet—Phantom, Solflare, or something similar. Just like my copper, keep it safe, or someone might come knocking on your door with a complaint tablet.",
     value: "item-4",
   },
   {
     question:
-      "Enim ad minim veniam, quis nostrud exercitation ullamco laboris?",
-    answer: "consectetur adipisicing elit. Sint labore.",
+      "Is there a roadmap?",
+    answer: "A roadmap? Bah! The only road is the one that leads to my warehouse. You’ll get what you get, and you’ll like it.",
     value: "item-5",
   },
 ];
@@ -59,7 +65,7 @@ export const FAQSection = () => {
               {question}
             </AccordionTrigger>
 
-            <AccordionContent>{answer}</AccordionContent>
+            <AccordionContent className="text-lg">{answer}</AccordionContent>
           </AccordionItem>
         ))}
       </Accordion>
