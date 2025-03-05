@@ -67,12 +67,12 @@ export const BenefitsSection = () => {
               whileHover={{ scale: 1.05, rotate: 5 }}
               className="min-w-[280px] max-w-[320px] flex-1"
             >
-              <Card className="h-full flex flex-col bg-muted/50 dark:bg-card hover:bg-background transition-all delay-75 group/number">
+              <Card className="h-full  rounded-2xl flex flex-col bg-muted/50 dark:bg-card hover:bg-background transition-all delay-75 group/number">
                 {/* Image at full card width */}
                 <img
                   src={image}
                   alt={title}
-                  className="w-full h-auto object-cover rounded-t-lg"
+                  className="w-full h-auto object-cover rounded-t"
                 />
 
                 <CardHeader className="flex flex-col items-start">
