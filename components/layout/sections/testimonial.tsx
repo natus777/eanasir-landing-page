@@ -114,26 +114,27 @@ export const TestimonialSection = () => {
               key={review.name}
               className="md:basis-1/2 lg:basis-1/3"
             >
-              <Card className="bg-muted/50 dark:bg-card">
-                <CardContent className="pt-6 pb-0">
-                  {renderStars(review.rating)}
-                  {`"${review.comment}"`}
-                </CardContent>
+              <Card className="relative bg-muted/50 dark:bg-card bg-[url('/textures/sandstone.jpg')] bg-cover bg-center rounded-2xl overflow-hidden before:absolute before:inset-0 before:bg-black/50">
+  <CardContent className="relative pt-6 pb-0">
+    {renderStars(review.rating)}
+    {`"${review.comment}"`}
+  </CardContent>
 
-                <CardHeader>
-                  <div className="flex flex-row items-center gap-4">
-                    <Avatar>
-                      <AvatarImage src={review.image} alt={review.name} />
-                      <AvatarFallback>{review.name.charAt(0)}</AvatarFallback>
-                    </Avatar>
+  <CardHeader className="relative">
+    <div className="flex flex-row items-center gap-4">
+      <Avatar>
+        <AvatarImage src={review.image} alt={review.name} />
+        <AvatarFallback>{review.name.charAt(0)}</AvatarFallback>
+      </Avatar>
 
-                    <div className="flex flex-col">
-                      <CardTitle className="text-lg">{review.name}</CardTitle>
-                      <CardDescription>{review.userName}</CardDescription>
-                    </div>
-                  </div>
-                </CardHeader>
-              </Card>
+      <div className="flex flex-col">
+        <CardTitle className="text-lg">{review.name}</CardTitle>
+        <CardDescription>{review.userName}</CardDescription>
+      </div>
+    </div>
+  </CardHeader>
+</Card>
+
             </CarouselItem>
           ))}
         </CarouselContent>
