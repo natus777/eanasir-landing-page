@@ -1,7 +1,8 @@
 import { Separator } from "@/components/ui/separator";
-import { ChevronsDownIcon, HandCoins } from "lucide-react";
+import { ChevronsDownIcon, HandCoins, Instagram, Twitter, XIcon } from "lucide-react";
 import Link from "next/link";
 import { headingFont } from "@/lib/fonts";
+import DiscordIcon from "@/components/icons/discord-icon";
 
 export const FooterSection = () => {
   return (
@@ -23,13 +24,19 @@ export const FooterSection = () => {
             <h3 className="font-bold text-lg">Contact</h3>
 
             <div>
-              <Link href="#" className="opacity-60 hover:opacity-100">
-                Twitter
-              </Link>
-            </div>
+            <Link
+              href="https://x.com/eanasirscopper"
+              className="flex items-center gap-2 opacity-60 hover:opacity-100"
+            >
+              <Twitter size={20} />
+              X/Twitter
+            </Link>
+          </div>
 
             <div>
-              <Link href="#" className="opacity-60 hover:opacity-100">
+              <Link href="https://www.instagram.com/eanasirsellscopper/" className="flex items-center gap-2 opacity-60 hover:opacity-100">
+              <Instagram size={20} />
+
                 Instagram
               </Link>
             </div>
@@ -41,7 +48,7 @@ export const FooterSection = () => {
             <h3 className="font-bold text-lg">Help</h3>
 
             <div>
-              <Link href="#" className="opacity-60 hover:opacity-100">
+              <Link href="#faq" className="opacity-60 hover:opacity-100">
                 FAQ
               </Link>
             </div>
@@ -57,7 +64,7 @@ export const FooterSection = () => {
             </div>
 
             <div>
-              <Link href="#" className="opacity-60 hover:opacity-100">
+              <Link href="#" className="flex items-center gap-2 opacity-60 hover:opacity-100">
                 Discord
               </Link>
             </div>
